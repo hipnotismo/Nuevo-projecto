@@ -329,7 +329,7 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 
-*/bin
-*/obj
+Projecto-clase-9-11\bin
+Projecto-clase-9-11\obj
 *.db
 *.opendb
