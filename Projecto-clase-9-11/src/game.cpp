@@ -1,14 +1,9 @@
 #include "SFML/Graphics.hpp"
 #include "STP/TMXLoader.hpp"
-#include <ctime>
 
 #include "game.h"
 
-struct Plat1
-{
-	int x = 200;
-	int y = 155;
-};
+
 namespace Game
 {
 	
@@ -56,16 +51,16 @@ namespace Game
 				}
 			}
 
-			if (x >= 285 && x <= 330)
+			if (x >= 285 && x <= 430)
 			{
-				if (y > 100)
+				if (y > 150)
 				{
 					x = Init_Char_x;
 					y = Init_Char_y;
 				}
 			}
 
-			if (x >= 330)
+			if (x >= 431)
 			{
 				if (y > 155)
 				{
