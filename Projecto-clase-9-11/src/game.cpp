@@ -14,7 +14,8 @@ namespace Game
 		window.setFramerateLimit(60);
 
 		tmx::TileMap map("res/Mapa.tmx");
-		
+		map.GetLayer("Bloques").visible = false;
+
 		sf::Texture t1;
 
 		t1.loadFromFile("res/Character.png");
