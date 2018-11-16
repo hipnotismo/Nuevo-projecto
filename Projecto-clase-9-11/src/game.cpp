@@ -14,13 +14,14 @@ namespace Game
 		window.setFramerateLimit(60);
 
 		tmx::TileMap map("res/Mapa.tmx");
-		map.GetLayer("Bloques").visible = false;
+		//map.GetLayer("Bloques").visible = false;
 
 		sf::Texture t1;
 
 		t1.loadFromFile("res/Character.png");
 		
 		sf::Sprite Char(t1);
+		Char.getGlobalBounds().width;
 
 		static int Init_Char_x = 100;
 		static int Init_Char_y = 100;
