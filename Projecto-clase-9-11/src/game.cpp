@@ -13,6 +13,11 @@ namespace Game
 		sf::RenderWindow window(sf::VideoMode(700, 300), "STP Example");
 		window.setFramerateLimit(60);
 
+		sf::RectangleShape rectangle(sf::Vector2f(285, 10));
+
+		rectangle.setFillColor(sf::Color::Transparent);
+
+
 		tmx::TileMap map("res/Mapa.tmx");
 		//map.GetLayer("Bloques").visible = false;
 
@@ -21,7 +26,6 @@ namespace Game
 		t1.loadFromFile("res/Character.png");
 		
 		sf::Sprite Char(t1);
-		Char.getGlobalBounds().width;
 
 		static int Init_Char_x = 100;
 		static int Init_Char_y = 100;
@@ -81,12 +85,15 @@ namespace Game
 			}
 
 			Char.setPosition(x, y);
+			rectangle.setPosition(0,195);
 
 			// Clear screen
 			window.clear();
 			// Draw the map
 			window.draw(map);
 			window.draw(Char);
+			window.draw(rectangle);
+
 
 			// Update the window
 			window.display();
