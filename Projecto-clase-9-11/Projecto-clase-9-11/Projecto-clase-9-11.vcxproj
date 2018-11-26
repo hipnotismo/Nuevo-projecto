@@ -21,9 +21,11 @@
   <ItemGroup>
     <ClCompile Include="..\src\game.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\game.h" />
+    <ClInclude Include="..\src\player.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{33FC5E18-F4B7-49FC-9411-DD80C2AEFA27}</ProjectGuid>

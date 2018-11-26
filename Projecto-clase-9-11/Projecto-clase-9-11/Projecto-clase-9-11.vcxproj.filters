@@ -21,9 +21,15 @@
     <ClCompile Include="..\src\game.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\player.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\game.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\player.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,102 +2,66 @@
 #include "STP/TMXLoader.hpp"
 
 #include "game.h"
-
+#include "player.h"
 
 namespace Game
 {
-	
 
+	
 	void core()
 	{
 		sf::RenderWindow window(sf::VideoMode(700, 300), "STP Example");
 		window.setFramerateLimit(60);
 
-		sf::RectangleShape rectangle(sf::Vector2f(285, 10));
+		// Se crean las plataformas
+		sf::RectangleShape rectangle1(sf::Vector2f(288, 32));
+		sf::RectangleShape rectangle2(sf::Vector2f(32, 32));
 
-		rectangle.setFillColor(sf::Color::Transparent);
+		// Posicion de las plataformas
+		rectangle1.setPosition(0,192);
+
+		// Volver a las plataformas transparentes
+		rectangle1.setFillColor(sf::Color::Transparent);
 
 
 		tmx::TileMap map("res/Mapa.tmx");
-		//map.GetLayer("Bloques").visible = false;
-
-		sf::Texture t1;
-
-		t1.loadFromFile("res/Character.png");
-		
-		sf::Sprite Char(t1);
-
-		static int Init_Char_x = 100;
-		static int Init_Char_y = 100;
-		static int x = Init_Char_x, y = Init_Char_y, h = 200;
-		static float dx = 0, dy = 0;
-
-		while (window.isOpen()) {
+		Player player;
+		while (window.isOpen()) 
+		{
 			// Process events
 			sf::Event event;
-			while (window.pollEvent(event)) 
+			while (window.pollEvent(event))
 			{
 				// Close window : exit
 				if (event.type == sf::Event::Closed)
 					window.close();
+
 			}
 
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) x += 3;
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) x -= 3;
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) y -= 7;
-
-			dy += 0.2;
-			y += dy;
-
-			if (x <= 285) 
+			if (player.Char.getGlobalBounds().intersects(rectangle1.getGlobalBounds()))
 			{
-				if (y > 155)
-				{
-					dy = 0;
-				}
+				player.dy = 0;
 			}
 
-			if (x >= 285 && x <= 430)
-			{
-				if (y > 150)
-				{
-					x = Init_Char_x;
-					y = Init_Char_y;
-				}
-			}
-
-			if (x >= 431)
-			{
-				if (y > 155)
-				{
-					dy = 0;
-				}
-			}
-
-			if (x >= 650)
-			{
-				x -= 3;
-			}
-
-			if (x <= 0)
-			{
-				x += 3;
-			}
-
-			Char.setPosition(x, y);
-			rectangle.setPosition(0,195);
-
+			// dibujar jugador
+			player.Movimiento();
 			// Clear screen
 			window.clear();
 			// Draw the map
 			window.draw(map);
-			window.draw(Char);
-			window.draw(rectangle);
-
+			window.draw(player.Char);
+			// Dibujar plataformas
+			window.draw(rectangle1);
+			window.draw(rectangle2);
 
 			// Update the window
 			window.display();
 		}
+
+	}
+
+	void draw()
+	{
 
 	}
 }
