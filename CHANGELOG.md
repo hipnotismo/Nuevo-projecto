@@ -1,6 +1,11 @@
 Changelog
 
-[0.4] - 10-11-2018
+[0.5] - 28-11-2018
+-Camara creada usando "View"
+-La camara sigue al jugador
+-Cambios en el mapa 
+
+[0.4] - 17-11-2018
 -Colisiones agregadas
 -Personaje ahora es una clase
 

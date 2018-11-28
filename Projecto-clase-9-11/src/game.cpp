@@ -10,7 +10,11 @@ namespace Game
 	
 	void core()
 	{
-		sf::RenderWindow window(sf::VideoMode(700, 300), "STP Example");
+		int Count = 0;
+		//La ventana ocupa 22 bloques en "x" y 10 en "y"
+		sf::RenderWindow window(sf::VideoMode(704, 320), "El dorito que salta");
+		sf::View view(sf::Vector2f(576.0f, 480.0f), sf::Vector2f(704.0f,320.0f));
+
 		window.setFramerateLimit(60);
 
 		// Se crean las plataformas
@@ -18,7 +22,7 @@ namespace Game
 		sf::RectangleShape rectangle2(sf::Vector2f(32, 32));
 
 		// Posicion de las plataformas
-		rectangle1.setPosition(0,192);
+		rectangle1.setPosition(512,512);
 
 		// Volver a las plataformas transparentes
 		rectangle1.setFillColor(sf::Color::Transparent);
@@ -37,16 +41,34 @@ namespace Game
 					window.close();
 
 			}
-
+			//Mobimiento de view
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+			{
+				view.move(sf::Vector2f(3, 0));
+				Count += 1;
+			}
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+			{
+				view.move(sf::Vector2f(-3, 0));
+				Count -= 1;
+				if (Count < 0)
+				{
+					view.move(sf::Vector2f(3, 0));
+					Count = 0;
+				}
+			}
 			if (player.Char.getGlobalBounds().intersects(rectangle1.getGlobalBounds()))
 			{
-				player.dy = 0;
+				player.dy = 0.0f;
 			}
 
 			// dibujar jugador
-			player.Movimiento();
+			player.Movement();
 			// Clear screen
 			window.clear();
+			//Camara
+			//view.setCenter(player.Get_position());
+			window.setView(view);
 			// Draw the map
 			window.draw(map);
 			window.draw(player.Char);

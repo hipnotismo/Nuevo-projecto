@@ -9,7 +9,7 @@ namespace Game {
 	public:
 		Player();
 		~Player();
-		void Movimiento();
+		void Movement();
 		sf::Sprite Char;
 		float dy;
 

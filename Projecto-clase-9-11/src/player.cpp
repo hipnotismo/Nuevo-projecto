@@ -6,8 +6,8 @@ using namespace Game;
 
 Player::Player()
 {
-	Init_Char_x = 100;
-	Init_Char_y = 100;
+	Init_Char_x = 544;
+	Init_Char_y = 480;
 	x = Init_Char_x;
 	y = Init_Char_y;
 	h = 200;
@@ -20,7 +20,7 @@ Player::Player()
 Player::~Player()
 {
 }
-void Player::Movimiento()
+void Player::Movement()
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) x += 3;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) x -= 3;
@@ -31,7 +31,7 @@ void Player::Movimiento()
 
 }
 
-void Player::Cargar_Sprite() 
+void Player::Cargar_Sprite()
 {
 	t1.loadFromFile("res/Character.png");
 	Char.setTexture(t1);
