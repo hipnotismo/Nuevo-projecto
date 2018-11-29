@@ -1,5 +1,10 @@
 Changelog
 
+[0.6] - 29-11-2018
+-Plataformas mejoradas
+-Reinicio de nivel al tocar agua
+-La camara no deja al jugador 
+
 [0.5] - 28-11-2018
 -Camara creada usando "View"
 -La camara sigue al jugador

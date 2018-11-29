@@ -12,12 +12,9 @@ namespace Game {
 		void Movement();
 		sf::Sprite Char;
 		float dy;
+		int x, y, Init_Char_x, Init_Char_y;
 
 	private:
-
-		int Init_Char_x;
-		int Init_Char_y;
-		int x, y, h;
 		float dx;
 		void Cargar_Sprite();
 		sf::Texture t1;

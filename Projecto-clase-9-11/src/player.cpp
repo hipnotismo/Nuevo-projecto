@@ -10,7 +10,6 @@ Player::Player()
 	Init_Char_y = 480;
 	x = Init_Char_x;
 	y = Init_Char_y;
-	h = 200;
 	dx = 0;
 	dy = 0;
 	Cargar_Sprite();
