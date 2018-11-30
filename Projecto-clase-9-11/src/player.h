@@ -16,7 +16,7 @@ namespace Game {
 
 	private:
 		float dx;
-		void Cargar_Sprite();
+		void Load_Sprite();
 		sf::Texture t1;
 	};
 

@@ -1,5 +1,10 @@
 Changelog
 
+[1.0] - 29-11-2018
+-Enemigo implementado
+-Reinici de nivel al tocar enemigo
+-El enemigo puede morir
+
 [0.6] - 29-11-2018
 -Plataformas mejoradas
 -Reinicio de nivel al tocar agua
