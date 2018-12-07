@@ -1,5 +1,8 @@
 Changelog
 
+[1.1] - 29-11-2018
+-Cambios menores a la organizacion de las carpetas y el codigo
+
 [1.0] - 29-11-2018
 -Enemigo implementado
 -Reinici de nivel al tocar enemigo

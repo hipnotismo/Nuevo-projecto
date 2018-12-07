@@ -3,6 +3,5 @@
 namespace Game
 {	
 	void core();
-	void draw();
 }
 #endif /

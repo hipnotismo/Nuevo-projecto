@@ -1,7 +1,9 @@
+#include "game.h"
+
 #include "SFML/Graphics.hpp"
+#include "SFML\Audio.hpp"
 #include "STP/TMXLoader.hpp"
 
-#include "game.h"
 #include "player.h"
 
 namespace Game
@@ -29,7 +31,7 @@ namespace Game
 		int Count = 0;
 
 		//La ventana ocupa 22 bloques en "x" y 10 en "y"
-		sf::RenderWindow window(sf::VideoMode(704, 352), "El dorito que salta");
+		sf::RenderWindow window(sf::VideoMode(704, 352), "El dorito que salta, V 1.1");
 		sf::View view(sf::Vector2f(576.0f, 480.0f), sf::Vector2f(704.0f,320.0f));
 
 		window.setFramerateLimit(60);
@@ -114,7 +116,7 @@ namespace Game
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 			{
 				view.move(sf::Vector2f(3, 0));
-				Count += 1;
+				Count += 1 ;
 				if (player.Char.getGlobalBounds().intersects(rectangle10.getGlobalBounds()))
 				{
 					view.move(sf::Vector2f(-3, 0));
